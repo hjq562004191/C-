@@ -1,0 +1,80 @@
+#include <stdio.h>
+int gongbei(int a,int b){
+	int i,t=a*b,min;
+	for(i=t;i>=a&&i>=b;i--)
+		if(i%a==0&&i%b==0)
+		min=i;
+		return min;
+}
+int gongyue(int a,int b){
+	int p,q,max;
+	p=gongbei(a,b);
+	q=a*b/p;
+	max=q;
+	return max;
+}
+	
+int main()
+{
+	int a,b;
+	scanf("%d%d",&a,&b);
+	printf("最小公倍数:%d\n最大公因数:%d\n",gongbei(a,b),gongyue(a,b));
+}
+
+
+
+
+
+#include <stdio.h>
+int f(int a,int b,int c,int d,double x0){
+	double y;
+		y=a*x0*x0*x0+b*x0*x0+c*x0+d;
+		return y;
+}
+int fd(int a,int b,int c,int d,double x0){
+		double yd;
+    	yd=3*a*x0*x0+2*b*x0+c;
+    	return yd;
+}
+double jieguo(int a,int b,int c,int d,double x0){
+	int i;
+	x0=x0-f(a,b,c,d,x0)/fd(a,b,c,d,x0);
+	while(x0<1e-07)
+	x0=x0-f(a,b,c,d,x0)/fd(a,b,c,d,x0);
+	return x0;
+}
+int main(){
+	int a,b,c,d,x;
+	double x0;
+	printf("输入四个系数:");
+	scanf("%d%d%d%d",&a,&b,&c,&d);
+	printf("输入一个x0:");
+	scanf("%lf",&x0);
+	printf("%lf\n",jieguo(a,b,c,d,x0));
+}
+
+
+
+
+
+#include <stdio.h>
+int count(int p[30],double c){
+	int k=0;
+	for(int i=0;i<30;i++){
+		if(p[i]>c)
+		k++;
+	}
+	return k;
+}
+int main(){
+	int sum=0,a[30]={12,32,34,45,56,67,87,98,34,56,78,23,90,78,99,56,45,56,87,95,98,34,56,78,23,90,78,56,89,77};
+	double ave;
+	int i;
+	for(i=0;i<30;i++)
+	{
+		sum=sum+a[i];
+	}
+	ave=sum/30.0;
+	printf("平均分为%lf分\n",ave); 
+	printf("高于平均分的有%d人\n",count(a,ave));
+}
