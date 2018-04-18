@@ -1,0 +1,91 @@
+ASCLLzhi
+#include <stdio.h>
+#include <stdlib.h>
+int main(){
+	char a,b,c,t;
+	int n,k;
+	scanf("%d",&n);
+	getchar();
+	while(n--)
+	{
+		scanf("%c%c%c",&a,&b,&c);
+		getchar();
+		if(a>b)
+		{
+			t=a;a=b;b=t;
+	    }
+		if(a>c)
+		{
+			t=a;a=c;c=t;
+		}
+		if(b>c)
+		{
+			t=b;b=c;c=t;
+		}
+		printf("%c %c %c\n",a,b,c);
+	}
+}
+
+
+矩阵交互
+#include <stdio.h>
+int main(){
+	int a[3][3],b[3][3];
+	int i,j,n;
+	scanf("%d",&n);
+	while(n--){
+		for(i=0;i<3;i++)
+			for(j=0;j<3;j++)
+		scanf("%d",&b[i][j]);
+	for(i=0;i<3;i++)
+		for(j=0;j<3;j++)
+	{
+		a[i][j]=b[j][i];
+	}
+	for(i=0;i<3;i++){
+		for(j=0;j<3;j++)
+	printf("%d ",a[i][j]);
+	printf("\n"); 
+}
+}
+}
+
+
+
+菲波那切数列
+#include <stdio.h>
+int fun(int n){
+	if(n==1||n==2)
+	return 1;
+	if(n>2)
+	return fun(n-2)+fun(n-1);
+}
+int main(){
+	int n,m;
+	scanf("%d",&m);
+	while(m--){
+		scanf("%d",&n);
+		printf("%d\n",fun(n));
+	}
+	
+}
+
+
+奇偶分离
+#include <stdio.h>
+int main(){
+	int n,i,j;
+	scanf("%d",&i);
+	if(i>=2&&i<30)
+	while(i--){
+		scanf("%d",&n);
+		for(j=1;j<=n;j=j+2)
+			printf("%d ",j); 
+			printf("\n");
+		for(j=2;j<=n;j=j+2)
+			printf("%d ",j);
+			printf("\n");
+	}
+	else
+	printf("请输入正确的数字！");
+}
