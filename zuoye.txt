@@ -1,3 +1,4 @@
+è°ƒç”¨å‡½æ•°æ±‚ä¸¤ä¸ªæ•´æ•°çš„æœ€å¤§å…¬å› æ•°å’Œæœ€å°å…¬å€æ•°
 #include <stdio.h>
 int gongbei(int a,int b){
 	int i,t=a*b,min;
@@ -18,13 +19,13 @@ int main()
 {
 	int a,b;
 	scanf("%d%d",&a,&b);
-	printf("×îĞ¡¹«±¶Êı:%d\n×î´ó¹«ÒòÊı:%d\n",gongbei(a,b),gongyue(a,b));
+	printf("æœ€å°å…¬å€æ•°:%d\næœ€å¤§å…¬å› æ•°:%d\n",gongbei(a,b),gongyue(a,b));
 }
 
 
 
 
-
+ç”¨ç‰›é¡¿å…¬å¼æ±‚ä¸€ä¸ªä¸€å…ƒä¸‰æ¬¡æ–¹ç¨‹çš„æ ¹
 #include <stdio.h>
 int f(int a,int b,int c,int d,double x0){
 	double y;
@@ -46,9 +47,9 @@ double jieguo(int a,int b,int c,int d,double x0){
 int main(){
 	int a,b,c,d,x;
 	double x0;
-	printf("ÊäÈëËÄ¸öÏµÊı:");
+	printf("è¾“å…¥å››ä¸ªç³»æ•°:");
 	scanf("%d%d%d%d",&a,&b,&c,&d);
-	printf("ÊäÈëÒ»¸öx0:");
+	printf("è¾“å…¥ä¸€ä¸ªx0:");
 	scanf("%lf",&x0);
 	printf("%lf\n",jieguo(a,b,c,d,x0));
 }
@@ -56,7 +57,7 @@ int main(){
 
 
 
-
+ç”¨å‡½æ•°æ±‚é«˜äºå¹³å‡åˆ†çš„äººæ•°
 #include <stdio.h>
 int count(int p[30],double c){
 	int k=0;
@@ -75,6 +76,6 @@ int main(){
 		sum=sum+a[i];
 	}
 	ave=sum/30.0;
-	printf("Æ½¾ù·ÖÎª%lf·Ö\n",ave); 
-	printf("¸ßÓÚÆ½¾ù·ÖµÄÓĞ%dÈË\n",count(a,ave));
+	printf("å¹³å‡åˆ†ä¸º%lfåˆ†\n",ave); 
+	printf("é«˜äºå¹³å‡åˆ†çš„æœ‰%däºº\n",count(a,ave));
 }
