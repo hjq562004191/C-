@@ -1,0 +1,114 @@
+求两个整数阶乘之和的比
+#include <stdio.h>
+int p(int x){
+	if(x==1)
+	return 1;
+	if(x>1)
+	return x*p(x-1);
+}
+int sum(int y){
+	int s=0;
+	while(y--)
+	s+=p(y);
+	return s;
+}
+float f(int a,int b){
+	float t;
+	t=(float)sum(a)/sum(b);
+	return t;
+}
+int main(){
+	int m,n;
+	printf("请输入整数m,n的值:");
+	scanf("%d%d",&m,&n);
+	printf("%f\n",f(m,n));
+}
+
+
+
+
+求圆柱圆锥的体积
+#include <stdio.h>
+#define PI 3.1415
+float fun(float r,float h){
+	float v0;
+	v0=PI*r*r*h;
+	return v0;
+}
+float Vzhu(float r1,float r2,float h){
+	float v;
+	v=fun(r1,h)-fun(r2,h);
+	return v;
+}
+float Vzhui(float r,float h){
+	float v;
+	v=(1/3.0)*fun(r,h);
+	return v;
+}
+int main(){
+	float r1,r2,h1;
+	printf("请依次输入圆筒的外半径、内半径和高:");
+	scanf("%f%f%f",&r1,&r2,&h1);
+	float r3,h2;
+	printf("请输入圆锥的半径和高:");
+	scanf("%f%f",&r3,&h2);
+	printf("圆筒的体积:%f\n圆锥的体积:%f\n",Vzhu(r1,r2,h1),Vzhui(r3,h2));
+}
+
+
+
+调用函数求素数水仙花数和完全数
+#include <stdio.h>
+#include <math.h>
+int shui(int n){
+	int i,a,b,c;
+	for(i=100;i<n;i++){
+		a=i/100;
+		b=(i/10)%10;
+		c=i%10;
+		if(i==a*a*a+b*b*b+c*c*c)
+		printf("%d\t",i);
+}
+}
+int sushu(int m){
+	int i,f,t=0;
+	for(m=2;m<=1000;m++){
+		f=1;
+		for(i=2;i<m;i++)
+		if(m%i==0){
+			f=0;
+			i=m;
+		}
+		if(f==1){
+		printf("%d\t",m);
+		t++;
+		if(t%9==0)
+		printf("\n");
+		}
+	}
+}
+int wan(int n){
+	int i,j,sum;
+	for(i=1;i<n;i++){
+		sum=0;
+		for(j=1;j<i;j++){
+			if(i%j==0)
+			sum+=j;
+		}
+		if(i==sum){
+			printf("%d\t",i);
+		}
+		} 
+}
+
+int main(){
+	printf("10000以内的素数为：\n");
+	sushu(1000);
+	printf("\n");
+	printf("1000以内的水仙花数为:\n");
+	shui(1000);
+	printf("\n");
+	printf("10000以内的完全数为:\n");
+	wan(10000);
+	printf("\n");
+}
