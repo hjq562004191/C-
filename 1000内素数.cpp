@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-int main(){
+int main(){ 
 	int m,i,f;
 	for(m=2;m<=1000;m++){
 		f=1;
